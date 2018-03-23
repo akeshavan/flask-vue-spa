@@ -30,9 +30,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 cd ..
 
-# serve back-end at localhost:5000
-FLASK_APP=run.py flask run
 ```
+
 # NHW Eval
 
 * download your order file ("~/Downloads/Anisha.xlsx")
