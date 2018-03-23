@@ -25,8 +25,6 @@ npm run build
 
 # install back-end
 cd ../backend
-virtualenv -p python3 venv
-source venv/bin/activate
 pip install -r requirements.txt
 cd ..
 
@@ -37,4 +35,4 @@ cd ..
 * download your order file ("~/Downloads/Anisha.xlsx")
 * download the zip file of all applicaitons ("~/Downloads/NeuroHackademy2018_application_review-20180323T003442Z-001.zip")
 * run `python run.py ~/Downloads/Anisha.xlsx ~/Downloads/NeuroHackademy2018_application_review-20180323T003442Z-001.zip`
-* your output file is `~/Downloads/Anisha.csv` (Note: CSV instead of XLSX)
+* your output file is at `~/Downloads/Anisha.csv` (Note: CSV instead of XLSX)
