@@ -33,4 +33,9 @@ cd ..
 # serve back-end at localhost:5000
 FLASK_APP=run.py flask run
 ```
+# NHW Eval
 
+* download your order file ("~/Downloads/Anisha.xlsx")
+* download the zip file of all applicaitons ("~/Downloads/NeuroHackademy2018_application_review-20180323T003442Z-001.zip")
+* run `python run.py ~/Downloads/Anisha.xlsx ~/Downloads/NeuroHackademy2018_application_review-20180323T003442Z-001.zip`
+* your output file is `~/Downloads/Anisha.csv` (Note: CSV instead of XLSX)
