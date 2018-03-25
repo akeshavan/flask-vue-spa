@@ -3,7 +3,7 @@
   <div class="content">
     <b-container>
       <!-- Content here -->
-      <b-row class="text-left">
+      <b-row class="text-left" v-if="currentPDF">
           <b-col class="left">
             <h4>Completed: {{nComplete}}</h4>
             <div v-for="(o, index) in order">
@@ -35,6 +35,15 @@
             </b-row>
 
           </b-col>
+      </b-row>
+      <b-row>
+        <b-col>
+        <h1> Hold On... </h1>
+        <br>
+        <div display="black">
+          <b-alert :show="err.show" variant="danger">{{err.message}}</b-alert>
+        </div>
+        </b-col>
       </b-row>
 
     </b-container>
@@ -102,7 +111,8 @@ export default {
     return {
       randomNumber: 0,
       order: [],
-      startIdx: 0
+      startIdx: 0,
+      err: {show: false}
     }
   },
   components: {vueSlider},
@@ -116,10 +126,11 @@ export default {
     },
     currentPDF () {
       if (this.currentApplicant) {
-        return `http://localhost:5000/api/pdf/${this.currentApplicant.Name}`
-      } else {
-        return null
+        if (this.currentApplicant.Name) {
+          return `http://localhost:5000/api/pdf/${this.currentApplicant.Name}`
+        }
       }
+      return null
     },
     completed () {
       const completed = []
@@ -171,7 +182,7 @@ export default {
         this.order = response.data.order
       })
       .catch(error => {
-        console.log(error)
+        this.err = {message: `${error}`, show: true}
       })
     }
   },
